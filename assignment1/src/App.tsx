@@ -47,11 +47,9 @@ function App() {
   };
 
   const subtractQuantity = (id: any) => {
-    let newBL = bucketList.map((item: any) => {
+    let newBL = bucketList.filter((item: any) => {
       if (item.id === id) {
-        if (item.quantity === 1) {
-          return item;
-        } else {
+        if (item.quantity > 1) {
           item.quantity = item.quantity - 1;
           return item;
         }
